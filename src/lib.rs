@@ -182,6 +182,10 @@ pub fn known_folder_local_app_data() -> Option<PathBuf> {
     known_folder(Shell::FOLDERID_LocalAppData)
 }
 
+pub fn known_folder_user_program_files() -> Option<PathBuf> {
+    known_folder(Shell::FOLDERID_UserProgramFiles)
+}
+
 pub fn known_folder_music() -> Option<PathBuf> {
     known_folder(Shell::FOLDERID_Music)
 }
@@ -212,11 +216,16 @@ pub fn known_folder_videos() -> Option<PathBuf> {
     known_folder(Shell::FOLDERID_Videos)
 }
 
+pub fn known_folder_fonts() -> Option<PathBuf> {
+    known_folder(Shell::FOLDERID_Fonts)
+}
+
 }
 
 #[cfg(target_os = "windows")]
 pub use self::target_windows::{
-    known_folder, known_folder_profile, known_folder_roaming_app_data, known_folder_local_app_data,
-    known_folder_music, known_folder_desktop, known_folder_documents, known_folder_downloads,
-    known_folder_pictures, known_folder_public, known_folder_templates, known_folder_videos
+    known_folder, known_folder_profile, known_folder_roaming_app_data, known_folder_local_app_data, 
+    known_folder_local_app_data, known_folder_music, known_folder_desktop, known_folder_documents, 
+    known_folder_downloads, known_folder_pictures, known_folder_public, known_folder_templates, 
+    known_folder_videos, known_folder_fonts
 };
